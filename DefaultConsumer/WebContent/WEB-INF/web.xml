@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>DefaultConsumer</display-name>
+  <context-param>
+  <param-name>requestTokenUrl</param-name>
+  <param-value>localhost:8080/RegensburgNutritionServer/rest/oauth1/request</param-value>
+  </context-param>
+   <context-param>
+  <param-name>accessTokenUrl</param-name>
+  <param-value>localhost:8080/RegensburgNutritionServer/rest/oauth1/access</param-value>
+  </context-param>
+  <context-param>
+  <param-name>authUrl</param-name>
+  <param-value>localhost:8080/RegensburgNutritionServer/rest/oauth1/auth</param-value>
+  </context-param>
+   <context-param>
+  <param-name>callbackUrl</param-name>
+  <param-value>localhost:8080/DefaultConsumer/consumer/oauth1Callback</param-value>
+  </context-param>
+   <context-param>
+  <param-name>consumerKey</param-name>
+  <param-value>ajdöjgöaj</param-value>
+  </context-param>
+   <context-param>
+  <param-name>consumerSecret</param-name>
+  <param-value>dajhfajödhgöj</param-value>
+  </context-param>
+  <servlet>
+  <servlet-name>de.ur.infwiss.nutrition.defaultconsumer.DefaultConsumerApp</servlet-name>
+  </servlet>
+ 
+    <!-- Servlet mapping can be omitted in case the Application subclass
+         is annotated with @ApplicationPath annotation; in such case
+         the mapping would be automatically added by Jersey -->
+    <servlet-mapping>
+        <servlet-name>de.ur.infwiss.nutrition.defaultconsumer.DefaultConsumerApp</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+</web-app>
