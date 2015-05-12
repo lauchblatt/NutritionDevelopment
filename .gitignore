@@ -1,3 +1,9 @@
+*target*
+*.jar
+*.war
+*.ear
+*.class
+
 *.pydevproject
 .metadata
 .gradle
