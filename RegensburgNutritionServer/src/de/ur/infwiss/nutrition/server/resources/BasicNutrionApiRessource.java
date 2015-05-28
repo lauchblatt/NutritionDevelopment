@@ -62,9 +62,11 @@ public class BasicNutrionApiRessource {
 		try {
 			Map<String,Object> prop = app.getProperties();
 			ExtendedOauthProviderInterface prov = (ExtendedOauthProviderInterface) prop.get("oauth1Provider");
-		    /*
-		     * TODO CHECK TOKEN AND THROW EXCEPTION IN CASE OF INVALIDITY	
-		     */
+		    //check Permission
+			if ( ! (PermissionManagement.grantedPermission(PermissionManagement.REQUEST_PERMISSION__GETNUTVALUE, token) ) ) {
+				throw new Exception("Permission denied (Token Permission: " + token +
+						", Requested Permission: " + PermissionManagement.REQUEST_PERMISSION__GETNUTVALUE +")");
+			}
 		    BasicFuncInterface func = BasicFuncImplFactory.instance.getBasicFuncImpl(sContext);
 		    int result=func.getNutritionValue(ingredient,substance,language,intakeQuantity,intakeUnit,outputUnit);
 		    return new NutValue(ingredient,substance,language,intakeQuantity,intakeUnit,result,outputUnit);   
