@@ -10,8 +10,9 @@ import javax.ws.rs.ext.Provider;
 import org.glassfish.jersey.server.oauth1.DefaultOAuth1Provider;
 
 /*
- * Adds implements declaration
+ * Adds implements declaration to its base class
  * Processes additional injected parameters indicating the type of permissions being requested
+ * (UPDATE: MAYBE this already done in the base class, nothing to do in this case)
  */
 @Provider
 public class ExtendedDefaultOauth1Provider extends DefaultOAuth1Provider implements

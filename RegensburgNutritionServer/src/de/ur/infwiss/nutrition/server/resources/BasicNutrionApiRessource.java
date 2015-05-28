@@ -39,6 +39,7 @@ import org.glassfish.jersey.server.oauth1.*;
  * No concurrency issues, as only reading access is offered
  * TODO: Define parameter in web.xml to specify the implementation
  * TODO: Access context via injection
+ * TODO: Define general mechanism for encoding permissions and checking permissions
  */
 
 @Path("/basicapi")
