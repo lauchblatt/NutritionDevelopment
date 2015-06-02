@@ -77,7 +77,7 @@ public class NutritionClient {
 		Invocation.Builder invocationBuilder =webTarget.request(MediaType.APPLICATION_XML);   
 		Response response = invocationBuilder.post(Entity.entity(form,MediaType.APPLICATION_FORM_URLENCODED_TYPE));
 		if (response.getStatus()!=200) {throw new Exception(response.readEntity(String.class));}
-		//call redirection url
+		//call redirection url, TODO What happens if rederict
 		
 		//send login data
 		
