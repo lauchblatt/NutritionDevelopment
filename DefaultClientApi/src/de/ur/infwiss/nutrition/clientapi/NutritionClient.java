@@ -18,7 +18,7 @@ import javax.xml.bind.Unmarshaller;
 import org.glassfish.jersey.client.ClientConfig;
 
 import de.ur.infwiss.nutrition.basicfunc.NutValue;
-import de.ur.infwiss.nutrition.server.resources.NutConstants;
+import de.ur.infwiss.nutrition.server.resources.PermissionManagement;
 
 
 /*
@@ -60,7 +60,7 @@ public class NutritionClient {
 	}
 	
 	public HashMap<String,Object> getNutritionValue(String ingredient,String substance,String language,int intakeQuantity,String intakeUnit,String outputUnit) throws Exception {
-        String token=authenticate(NutConstants.PERMISSION_ACCESS_BASICFUNC);	
+        String token=authenticate(PermissionManagement.PERMISSION_ACCESS_BASICFUNC);	
 		NutValue val= this.getNutritionValue(token,ingredient,substance,language,intakeQuantity,intakeUnit,outputUnit);
 		HashMap<String,Object> m=new HashMap<String,Object>();
 		m.put(NutritionClient.RESULT_KEY, val);

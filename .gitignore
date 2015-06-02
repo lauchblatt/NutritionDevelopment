@@ -42,3 +42,4 @@ Servers/
 
 # TeXlipse plugin
 .texlipse
+*.class

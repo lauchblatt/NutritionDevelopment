@@ -16,6 +16,8 @@ public class NutServerApp extends ResourceConfig {
 		this.packages(p[0]);
 		/*
 		 * Will need an implementation that stores tokens and secrets persistently in the future
+		 *Maybe a factory should be used to return concrete instance of concrete implementation 
+		 *
 		 */
 		ExtendedDefaultOauth1Provider prov = new ExtendedDefaultOauth1Provider();
 		this.property("oauth1Provider", prov);
