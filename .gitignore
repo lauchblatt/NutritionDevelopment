@@ -16,6 +16,7 @@ tmp/
 local.properties
 .settings/
 .loadpath
+.recommenders/
 build/
 Servers/
 
