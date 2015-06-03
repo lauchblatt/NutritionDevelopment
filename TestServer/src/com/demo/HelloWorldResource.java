@@ -23,6 +23,13 @@ public class HelloWorldResource {
 	}
 	
 	@GET
+	@Path("/test")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String test(){
+		return "Hello World";
+	}
+	
+	@GET
 	@Path("/queryParam")
 	public String getUser(@QueryParam("name")String name){
 		System.out.println("Name: " + name);
