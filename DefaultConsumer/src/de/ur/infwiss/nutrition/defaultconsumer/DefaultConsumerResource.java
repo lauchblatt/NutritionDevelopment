@@ -127,10 +127,13 @@ public class DefaultConsumerResource {
 	@Path("/oauth1Callback")
 	@GET
 	@Produces({ MediaType.TEXT_PLAIN })
-	public String doCallback(@QueryParam(OAuth1Parameters.VERIFIER) String verifier,@QueryParam(OAuth1Parameters.TOKEN) String token) throws Exception {
+	public String doCallback(@QueryParam(OAuth1Parameters.VERIFIER) String verifier,@QueryParam(OAuth1Parameters.TOKEN) String requToken) throws Exception {
 		
 		//retrieve flow instance AND REMOVE IT FROM THE MAP IN ORDER TO ALLOW DESTRUCTION BY GARBAGE COLLECTION
-        
+		Map<String,OAuth1AuthorizationFlow> m = ( Map<String,OAuth1AuthorizationFlow>) app.getProperties().get("flowMap");
+		OAuth1AuthorizationFlow flow=m.remove(requToken);
+		flow.finish(verifier);
+		
 		return ""; //Access Key
 	}
 	
