@@ -10,4 +10,6 @@ import org.glassfish.jersey.server.oauth1.OAuth1Provider;
 public interface ExtendedOauthProviderInterface extends OAuth1Provider {
 
 	  OAuth1Consumer registerConsumer(String owner,MultivaluedMap<String,String> attr);
+	  
+	  String getVerifier(String requToken);
 }
