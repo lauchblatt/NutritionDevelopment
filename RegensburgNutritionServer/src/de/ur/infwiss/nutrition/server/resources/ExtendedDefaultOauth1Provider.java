@@ -27,4 +27,9 @@ public class ExtendedDefaultOauth1Provider extends DefaultOAuth1Provider impleme
 		return super.registerConsumer(owner, attributes);
 	}
 	
+	public String getVerifier(String requToken) {
+		//must keep a map for mapping verified tokens to their verifiers
+		return requToken + "_verified"; //should be improved!
+	}
+	
 }

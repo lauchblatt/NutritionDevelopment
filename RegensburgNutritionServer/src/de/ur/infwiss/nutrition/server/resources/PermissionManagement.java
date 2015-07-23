@@ -17,7 +17,10 @@ public static final String REQUEST_PERMISSION__GETNUTVALUE=PermissionManagement.
 
 
 
-
+/*
+ * Can be refined, without affecting other modules
+ * 
+ */
 public static boolean grantedPermission(String request,String permission) {
   return request.equals(permission);	
 }
