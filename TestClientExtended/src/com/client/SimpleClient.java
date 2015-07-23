@@ -24,8 +24,7 @@ public class SimpleClient {
 			        "http://localhost:8080/TestServer/services/oauth/redirection")
 			    .build();
 		
-		String authorizationUri = authFlow.start();
-		System.out.println("TEST");
+		authFlow.start();
 	}
 
 }
